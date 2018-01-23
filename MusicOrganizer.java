@@ -182,4 +182,9 @@ public class MusicOrganizer
             }
         }
     }
+    
+    public void setGeneroCanciones(String genero, int index)
+    {
+        tracks.get(index).setGenero(genero);
+    }
 }

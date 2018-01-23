@@ -15,6 +15,8 @@ public class Track
     private String filename;
     // Contador de la cancion en reproduccion
     private int playCount;
+    //Genero de la cancion
+    private String genero;
     /**
      * Constructor for objects of class Track.
      * @param artist The track's artist.
@@ -70,7 +72,7 @@ public class Track
      */
     public String getDetails()
     {
-        return artist + ": " + title + "  (file: " + filename + ")" + "Numero de Reproducciones: " + playCount;
+        return artist + ": " + title + "  (file: " + filename + ")" + "Numero de Reproducciones: " + playCount + "Genero: " + genero;
     }
     
     /**
@@ -91,8 +93,18 @@ public class Track
         playCount = 0;
     }
     
-     public void avanzarCount()
+    public void avanzarCount()
     {
         playCount ++;
+    }
+    
+    public void setGenero(String genero)
+    {
+        this.genero = genero;
+    }
+    
+    public String getGenero()
+    {
+        return genero;
     }
 }
