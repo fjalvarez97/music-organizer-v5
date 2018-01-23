@@ -15,7 +15,8 @@ public class MusicOrganizer
     private MusicPlayer player;
     // A reader that can read music files and load them as tracks.
     private TrackReader reader;
-
+    // Contador de la cancion en reproduccion
+    private int playCount;
     /**
      * Create a MusicOrganizer
      */
@@ -24,6 +25,7 @@ public class MusicOrganizer
         tracks = new ArrayList<Track>();
         player = new MusicPlayer();
         reader = new TrackReader();
+        playCount = 0;
         readLibrary("audio");
         System.out.println("Music library loaded. " + getNumberOfTracks() + " tracks.");
         System.out.println();
@@ -181,5 +183,15 @@ public class MusicOrganizer
                 System.out.println(track.getDetails());
             }
         }
+    }
+    
+    public void resetCount()
+    {
+        playCount = 0;
+    }
+    
+    public void avanzarCount()
+    {
+        playCount ++;
     }
 }
